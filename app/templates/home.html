@@ -1,0 +1,283 @@
+<!-- app/templates/home.html -->
+{% extends "base.html" %}
+{% block title %}Home · A Different Path{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <div class="hero__logo">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+    </div>
+    <h1 class="hero__title">A Different Path</h1>
+    <p class="hero__subtitle">
+      A community-based nonprofit serving Greater Sacramento’s historically marginalized communities.
+      Rooted in Faith, Hope, and Change, we provide mental health education and support to trauma-impacted
+      youth, adults, and families.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ url_for('site.how_we_support') }}">Get Started Today →</a>
+      <a class="btn" href="{{ url_for('site.who_we_are') }}">Learn More About Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="hero__kicker" style="text-align:left;">Our Values</div>
+    <h2 style="margin:10px 0 10px;">What We Stand On</h2>
+    <p style="margin:0 0 16px; color: var(--muted); max-width: 760px; line-height: 1.7;">
+      Tap a value to learn more. This carousel auto-advances.
+    </p>
+
+    <div class="carousel" id="valuesCarousel">
+      <button class="carousel__nav carousel__nav--left" type="button" id="valuesPrev" aria-label="Previous slide">‹</button>
+
+      <div class="carousel__viewport">
+        <div class="carousel__track" id="valuesTrack">
+
+          <article class="valueSlide" tabindex="0" role="button" aria-expanded="false"
+                   style="--bg:url('{{ url_for('static', filename='img/values_equity.jpg') }}');">
+            <div class="valueSlide__shade"></div>
+            <div class="valueSlide__content">
+              <div class="valueSlide__title">Equity</div>
+              <div class="valueSlide__hint">Click to read</div>
+            </div>
+            <div class="valueSlide__overlay">
+              <div class="valueSlide__overlayTitle">Equity</div>
+              <p class="valueSlide__overlayText">
+                We work to reduce barriers to care and ensure support is accessible, respectful, and community-informed.
+              </p>
+              <div class="valueSlide__overlayHint">Click to close</div>
+            </div>
+          </article>
+
+          <article class="valueSlide" tabindex="0" role="button" aria-expanded="false"
+                   style="--bg:url('{{ url_for('static', filename='img/values_hope.jpg') }}');">
+            <div class="valueSlide__shade"></div>
+            <div class="valueSlide__content">
+              <div class="valueSlide__title">Hope</div>
+              <div class="valueSlide__hint">Click to read</div>
+            </div>
+            <div class="valueSlide__overlay">
+              <div class="valueSlide__overlayTitle">Hope</div>
+              <p class="valueSlide__overlayText">
+                We help people reconnect with possibility through encouragement, consistency, and practical tools.
+              </p>
+              <div class="valueSlide__overlayHint">Click to close</div>
+            </div>
+          </article>
+
+          <article class="valueSlide" tabindex="0" role="button" aria-expanded="false"
+                   style="--bg:url('{{ url_for('static', filename='img/values_integrity.jpg') }}');">
+            <div class="valueSlide__shade"></div>
+            <div class="valueSlide__content">
+              <div class="valueSlide__title">Integrity</div>
+              <div class="valueSlide__hint">Click to read</div>
+            </div>
+            <div class="valueSlide__overlay">
+              <div class="valueSlide__overlayTitle">Integrity</div>
+              <p class="valueSlide__overlayText">
+                We lead with honesty, cultural humility, and care — doing what we say we’ll do, and learning as we go.
+              </p>
+              <div class="valueSlide__overlayHint">Click to close</div>
+            </div>
+          </article>
+
+          <article class="valueSlide" tabindex="0" role="button" aria-expanded="false"
+                   style="--bg:url('{{ url_for('static', filename='img/values_accountability.jpg') }}');">
+            <div class="valueSlide__shade"></div>
+            <div class="valueSlide__content">
+              <div class="valueSlide__title">Accountability</div>
+              <div class="valueSlide__hint">Click to read</div>
+            </div>
+            <div class="valueSlide__overlay">
+              <div class="valueSlide__overlayTitle">Accountability</div>
+              <p class="valueSlide__overlayText">
+                We measure impact, listen to feedback, and stay responsible to the people and communities we serve.
+              </p>
+              <div class="valueSlide__overlayHint">Click to close</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="carousel__nav carousel__nav--right" type="button" id="valuesNext" aria-label="Next slide">›</button>
+
+      <div class="carousel__dots" id="valuesDots" aria-label="slider dots"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+(function () {
+  const carousel = document.getElementById('valuesCarousel');
+  const track = document.getElementById('valuesTrack');
+  const dotsWrap = document.getElementById('valuesDots');
+  const prev = document.getElementById('valuesPrev');
+  const next = document.getElementById('valuesNext');
+  if (!carousel || !track || !dotsWrap) return;
+
+  const slides = Array.from(track.querySelectorAll('.valueSlide'));
+  let idx = 0;
+
+  function closeAll() {
+    slides.forEach(s => {
+      s.classList.remove('is-open');
+      s.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function render() {
+    track.style.transform = `translateX(${-idx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+  }
+
+  function go(n, userInitiated=false) {
+    closeAll();
+    idx = (n + slides.length) % slides.length;
+    render();
+    if (userInitiated) restartAuto();
+  }
+
+  // Dots
+  dotsWrap.innerHTML = "";
+  const dots = slides.map((_, i) => {
+    const b = document.createElement('button');
+    b.type = "button";
+    b.className = "carousel__dot" + (i === 0 ? " is-active" : "");
+    b.setAttribute("aria-label", "Go to slide " + (i + 1));
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      go(i, true);
+    });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+
+  // Nav
+  prev?.addEventListener('click', (e) => { e.stopPropagation(); go(idx - 1, true); });
+  next?.addEventListener('click', (e) => { e.stopPropagation(); go(idx + 1, true); });
+
+  // ✅ Click-to-read (event delegation = more reliable)
+  track.addEventListener('click', (e) => {
+    const slide = e.target.closest('.valueSlide');
+    if (!slide) return;
+
+    // stop other document click handlers from instantly closing it
+    e.stopPropagation();
+
+    const slideIndex = slides.indexOf(slide);
+    const wasOpen = slide.classList.contains('is-open');
+
+    closeAll();
+
+    // If you clicked a non-active slide (rare), go to it first
+    if (slideIndex !== idx) {
+      go(slideIndex, true);
+      // Re-pick active slide after movement
+      const active = slides[slideIndex];
+      active.classList.add('is-open');
+      active.setAttribute('aria-expanded', 'true');
+      return;
+    }
+
+    // Toggle open/close on active slide
+    if (!wasOpen) {
+      slide.classList.add('is-open');
+      slide.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Keyboard
+  slides.forEach((slide) => {
+    slide.addEventListener('keydown', (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        e.stopPropagation();
+        slide.click();
+      } else if (e.key === "Escape") {
+        closeAll();
+      } else if (e.key === "ArrowLeft") {
+        go(idx - 1, true);
+      } else if (e.key === "ArrowRight") {
+        go(idx + 1, true);
+      }
+    });
+  });
+
+  // Auto-advance
+  let timer = null;
+  let auto = true;
+
+  function startAuto() {
+    stopAuto();
+    timer = setInterval(() => {
+      if (!auto) return;
+      if (slides.some(s => s.classList.contains('is-open'))) return; // don't advance while reading
+      go(idx + 1);
+    }, 4500);
+  }
+
+  function stopAuto() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  function restartAuto() {
+    startAuto();
+  }
+
+  // Pause on hover/touch
+  const viewport = track.parentElement;
+  viewport?.addEventListener('mouseenter', () => auto = false);
+  viewport?.addEventListener('mouseleave', () => auto = true);
+  viewport?.addEventListener('touchstart', () => auto = false, { passive: true });
+  viewport?.addEventListener('touchend', () => auto = true, { passive: true });
+
+  // ✅ Swipe/drag that doesn't break clicks
+  let startX = 0;
+  let moved = false;
+
+  viewport?.addEventListener('pointerdown', (e) => {
+    startX = e.clientX;
+    moved = false;
+    auto = false;
+  });
+
+  viewport?.addEventListener('pointermove', (e) => {
+    if (!startX) return;
+    if (Math.abs(e.clientX - startX) > 8) moved = true;
+  });
+
+  viewport?.addEventListener('pointerup', (e) => {
+    auto = true;
+    if (!startX) return;
+
+    const dx = e.clientX - startX;
+    startX = 0;
+
+    // If it was a click (no movement), do nothing here (track click will handle)
+    if (!moved) return;
+
+    if (Math.abs(dx) > 40) {
+      go(dx > 0 ? idx - 1 : idx + 1, true);
+    }
+  });
+
+  // ✅ Close overlay only when clicking outside carousel
+  document.addEventListener('click', (e) => {
+    if (!carousel.contains(e.target)) closeAll();
+  });
+
+  render();
+  startAuto();
+})();
+</script>
+
+
+
+
+{% endblock %}

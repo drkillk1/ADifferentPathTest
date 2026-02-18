@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block title %}Get Started · A Different Path{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding-top:64px;">
+  <div class="container">
+    <h1 class="hero__title">Get Started</h1>
+    <p class="hero__subtitle">
+      We provide mental health education, counseling request pathways, youth support options, and community-based programs. Choose a service below and open the request form.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="headerRow">
+      <div>
+        <h2>Simple steps. Clear follow-up.</h2>
+        <p class="headerRow__desc">
+          Submit a request, we respond, and we help you navigate next steps.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top:14px;">
+      <div class="timeline__row">
+        <div class="timeline__num">1</div>
+        <div>
+          <p class="timeline__title">Open the request form</p>
+          <p class="timeline__desc">Choose a service below and open the form. It takes just a few minutes.</p>
+        </div>
+      </div>
+
+      <div class="timeline__row">
+        <div class="timeline__num">2</div>
+        <div>
+          <p class="timeline__title">We follow up</p>
+          <p class="timeline__desc">Our team reaches out to confirm details and share next steps or resources.</p>
+        </div>
+      </div>
+
+      <div class="timeline__row">
+        <div class="timeline__num">3</div>
+        <div>
+          <p class="timeline__title">Support pathway begins</p>
+          <p class="timeline__desc">We connect you to the right program option, resources, or referrals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container getStartedGrid">
+
+    <div class="serviceCard reveal" data-analytics="footprints_to_healing">
+      <h3>Footprints to Healing</h3>
+      <p class="serviceMeta">Counseling for ages 12–18</p>
+      <p class="serviceDesc">
+        Youth counseling support designed for trauma recovery, stress management, and life transitions.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="footprints_to_healing"
+         href="{{ FORM_FOOTPRINTS_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard reveal" data-analytics="counseling_request">
+      <h3>Counseling Request</h3>
+      <p class="serviceDesc">
+        Request counseling services for individuals or families seeking mental health support.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="counseling_request"
+         href="{{ FORM_COUNSELING_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard reveal" data-analytics="life_coaching_adults">
+      <h3>Life Coaching Request</h3>
+      <p class="serviceMeta">Adults</p>
+      <p class="serviceDesc">
+        Coaching focused on goal-setting, accountability, and building a healthier direction forward.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="life_coaching_adults"
+         href="{{ FORM_LIFE_COACHING_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard reveal" data-analytics="alternative_sentencing">
+      <h3>Sacramento Sheriff’s</h3>
+      <p class="serviceMeta">Alternative Sentencing Program Request</p>
+      <p class="serviceDesc">
+        Court-referred services supporting accountability, rehabilitation, and community reintegration.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="alternative_sentencing"
+         href="{{ FORM_ALT_SENTENCING_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard reveal" data-analytics="community_programs_inquiry">
+      <h3>Community Programs Inquiry</h3>
+      <p class="serviceDesc">
+        Learn about workshops, groups, and community-based initiatives available in your area.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="community_programs_inquiry"
+         href="{{ FORM_COMMUNITY_PROGRAMS_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard reveal" data-analytics="professional_development">
+      <h3>Request Professional Development</h3>
+      <p class="serviceDesc">
+        Training, workshops, and speaking engagements for organizations and professionals.
+      </p>
+      <a class="btn btn--primary track-link"
+         data-event="get_started_click"
+         data-label="professional_development"
+         href="{{ FORM_PRO_DEV_URL }}" target="_blank" rel="noopener">Open form →</a>
+    </div>
+
+    <div class="serviceCard serviceCard--highlight reveal" data-analytics="get_involved">
+      <h3>Get Involved</h3>
+      <p class="serviceDesc">
+        Volunteer, partner, or support our mission in the community.
+      </p>
+      <a class="btn track-link"
+         data-event="get_started_click"
+         data-label="get_involved"
+         href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">
+         Volunteer →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* Scroll reveal animation */
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || els.length === 0) {
+    els.forEach(e => e.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  els.forEach(e => io.observe(e));
+})();
+
+/* Toast helper */
+(function () {
+  const toast = document.getElementById('toast');
+  const titleEl = document.getElementById('toastTitle');
+  const msgEl = document.getElementById('toastMsg');
+  if (!toast || !titleEl || !msgEl) return;
+
+  let t = null;
+
+  window.showToast = function (title, msg) {
+    titleEl.textContent = title || "Done";
+    msgEl.textContent = msg || "";
+    toast.classList.add('is-show');
+    clearTimeout(t);
+    t = setTimeout(() => toast.classList.remove('is-show'), 2200);
+  };
+})();
+
+/* Analytics click tracking
+   - Works now (console + optional local endpoint)
+   - Supports GA4 later via window.gtag
+*/
+(function () {
+  function sendEvent(eventName, label) {
+    const payload = {
+      event: eventName,
+      label: label || "",
+      path: window.location.pathname,
+      ts: Date.now()
+    };
+
+    // 1) If GA4 is present
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, { event_label: label, page_path: payload.path });
+    }
+
+    // 2) Dev visibility
+    console.log('[analytics]', payload);
+
+    // 3) Optional: post to your Flask endpoint for server-side logging later
+    // fetch('/analytics', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
+    //   .catch(() => {});
+  }
+
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('.track-link');
+    if (!el) return;
+
+    const eventName = el.getAttribute('data-event') || 'click';
+    const label = el.getAttribute('data-label') || el.textContent.trim();
+    sendEvent(eventName, label);
+  });
+})();
+</script>
+{% endblock %}

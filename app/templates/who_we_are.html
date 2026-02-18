@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Who We Are · A Different Path{% endblock %}
+{% block content %}
+<section class="hero" style="padding-top:64px;">
+  <div class="container">
+    <h1 class="hero__title">Who We Are</h1>
+    <p class="hero__subtitle">
+      A Different Path is a community-based nonprofit serving Greater Sacramento’s historically marginalized communities.
+      Our work centers mental health education, support, and access to resources for trauma-impacted youth, adults, and families.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ GET_STARTED_URL }}" target="_blank" rel="noopener">Get Started →</a>
+      <a class="btn" href="{{ url_for('site.how_we_support') }}">How We Support</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="grid">
+      <div class="proCard reveal" style="grid-column: span 12; padding:22px;">
+        <h2 style="margin:0 0 10px;">What we do</h2>
+        <p style="margin:0; color:var(--muted); line-height:1.7;">
+          We provide mental health education and support pathways designed to reduce barriers and strengthen stability.
+        </p>
+      </div>
+
+      <div class="proCard reveal" style="grid-column: span 6; padding:22px;">
+  <h3 style="margin:0 0 6px;">Education & workshops</h3>
+  <p style="margin:0; color:var(--muted); line-height:1.7;">
+    Learning spaces that build understanding, coping tools, and community connection.
+  </p>
+</div>
+
+<div class="proCard reveal" style="grid-column: span 6; padding:22px;">
+  <h3 style="margin:0 0 6px;">Tools & resources</h3>
+  <p style="margin:0; color:var(--muted); line-height:1.7;">
+    Practical guides and resource links that help you take the next step with clarity.
+  </p>
+</div>
+
+    </div>
+
+    <div class="actions" style="justify-content:flex-start; margin-top:16px;">
+      <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
+</div>
+  </div>
+</section>
+
+{% endblock %}

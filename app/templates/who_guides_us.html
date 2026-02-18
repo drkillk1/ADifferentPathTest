@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+{% block title %}Who Guides Us · A Different Path{% endblock %}
+{% block content %}
+
+<section class="hero" style="padding-top:64px;">
+  <div class="container">
+    <h1 class="hero__title">Who Guides Us</h1>
+    <p class="hero__subtitle">
+      Strong nonprofits have clear oversight. Our leadership supports accountability, ethical care, and sustainable impact
+      — so programs stay aligned with community needs.
+    </p>
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
+
+</div>
+  </div>
+</section>
+
+<section class="section" id="board">
+  <div class="container">
+    <div class="headerRow">
+      <div>
+<h2>Board & directors</h2>
+        <p class="headerRow__desc">
+          Our leadership team supports mission direction, community connection, and responsible stewardship.
+        </p>
+      </div>
+    </div>
+
+    <div class="quote reveal" style="margin: 0 0 16px; padding: 24px; font-size: 18px;">
+  <div class="quote__mark">“</div>
+  <div class="quote__text" style="font-size: 18px;">
+    Our leadership is committed to accountability, ethical care, and decisions that protect the mission and the community.
+  </div>
+  <div class="quote__by">— Board Statement</div>
+</div>
+
+<div class="teamGrid">
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">SP</div>
+    <div>
+      <p class="person__name">Ms. Shayla</p>
+      <p class="person__role">Board President</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-1">Details</button>
+  </div>
+</div>
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">PS</div>
+    <div>
+      <p class="person__name">Ms. Prena</p>
+      <p class="person__role">Board Secretary</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-2">Details</button>
+  </div>
+</div>
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">AF</div>
+    <div>
+      <p class="person__name">Ms. Ahisha</p>
+      <p class="person__role">Founder</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-3">Details</button>
+  </div>
+</div>
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">LC</div>
+    <div>
+      <p class="person__name">Ms. LaRita</p>
+      <p class="person__role">Co-Founder</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-4">Details</button>
+  </div>
+</div>
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">AA</div>
+    <div>
+      <p class="person__name">Ms. April</p>
+      <p class="person__role">Board Advisor</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-5">Details</button>
+  </div>
+</div>
+<div class="person reveal">
+  <div class="person__top">
+    <div class="avatar">MA</div>
+    <div>
+      <p class="person__name">Ms. Mishae</p>
+      <p class="person__role">Board Advisor</p>
+    </div>
+  </div>
+
+  <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+    <button class="btn" type="button" data-dialog-open="dlg-board-6">Details</button>
+  </div>
+</div>
+    </div>
+
+<dialog id="dlg-board-1" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. Shayla</div>
+        <div style="color: var(--muted); margin-top: 2px;">Board President</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Supports board leadership, governance priorities, and mission alignment across the organization.</p>
+  </div>
+</dialog>
+<dialog id="dlg-board-2" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. Prena</div>
+        <div style="color: var(--muted); margin-top: 2px;">Board Secretary</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Supports governance documentation, records, and process clarity to keep operations accountable.</p>
+  </div>
+</dialog>
+<dialog id="dlg-board-3" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. Ahisha</div>
+        <div style="color: var(--muted); margin-top: 2px;">Founder</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Guides the organization’s mission direction and community-informed approach to mental wellness support.</p>
+  </div>
+</dialog>
+<dialog id="dlg-board-4" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. LaRita</div>
+        <div style="color: var(--muted); margin-top: 2px;">Co-Founder</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Supports program development, operations, and service pathways that create accessible support options.</p>
+  </div>
+</dialog>
+<dialog id="dlg-board-5" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. April</div>
+        <div style="color: var(--muted); margin-top: 2px;">Board Advisor</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Provides guidance and perspective to strengthen planning, partnerships, and community engagement.</p>
+  </div>
+</dialog>
+<dialog id="dlg-board-6" style="max-width: 720px; width: min(720px, 92%); border: 0; border-radius: 18px; padding: 0;">
+  <div style="padding: 18px 18px 14px; border: 1px solid rgba(47,149,255,.18); border-radius: 18px; background: #fff;">
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
+      <div>
+        <div style="font-weight: 900; font-size: 18px;">Ms. Mishae</div>
+        <div style="color: var(--muted); margin-top: 2px;">Board Advisor</div>
+      </div>
+      <button class="btn" type="button" data-dialog-close style="padding:10px 12px;">Close</button>
+    </div>
+    <p style="margin: 12px 0 0; color: var(--muted); line-height: 1.7;">Supports leadership with strategic insight and community-informed guidance for sustainable impact.</p>
+  </div>
+</dialog>
+<div class="headerRow" style="margin-top:18px;">
+  <div>
+    <h2>Admin team</h2>
+    <p class="headerRow__desc">A small operations team supporting scheduling, follow-ups, and program coordination.</p>
+  </div>
+</div>
+
+<div class="teamGrid">
+  <div class="person reveal">
+    <div class="person__top">
+      <div class="avatar">AT</div>
+      <div>
+        <p class="person__name">Admin Team</p>
+        <p class="person__role">Operations & Coordination</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout reveal" style="margin-top:18px;">
+      <div class="callout__title">Want to connect with us?</div>
+      <p class="callout__desc">
+        We collaborate with people and organizations who share the mission. Use the Get Involved form and we’ll follow up.
+      </p>
+      <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+        <a class="btn btn--primary" href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">Get Involved →</a>
+</div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

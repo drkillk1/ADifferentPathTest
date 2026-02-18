@@ -1,0 +1,5 @@
+# requirements.txt
+Flask==3.0.3
+python-dotenv==1.0.1
+boto3==1.35.26
+gunicorn==22.0.0

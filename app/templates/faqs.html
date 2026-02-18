@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}FAQs · A Different Path{% endblock %}
+{% block content %}
+<section class="hero" style="padding-top:64px;">
+  <div class="container">
+    <h1 class="hero__title">FAQs</h1>
+    <p class="hero__subtitle">
+      If you don’t see what you need here, message us at the bottom of the page and we’ll help you find the right support.
+    </p>
+    <div class="actions">
+      <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
+</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sectionHeader">
+      <div class="sectionHeader__left">
+<h2>What people ask most</h2>
+        <p class="sectionHeader__desc">Click a question to expand. Works great on mobile.</p>
+      </div>
+    </div>
+
+    <div class="faqPro" id="faqPro">
+      <!-- Item -->
+      <div class="faqPro__item reveal">
+        <button class="faqPro__q" type="button" aria-expanded="false">
+          <span class="faqPro__qText">What is A Different Path?</span>
+          <span class="faqPro__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faqPro__a" hidden>
+          We’re a community-based nonprofit serving Greater Sacramento’s historically marginalized communities through
+          mental health education and support pathways.
+        </div>
+      </div>
+
+      <div class="faqPro__item reveal">
+        <button class="faqPro__q" type="button" aria-expanded="false">
+          <span class="faqPro__qText">How do I get started?</span>
+          <span class="faqPro__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faqPro__a" hidden>
+          Visit the Get Started page and choose the service you’re interested in. Each option links to a request form.
+          <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+            <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Go to Get Started →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqPro__item reveal">
+        <button class="faqPro__q" type="button" aria-expanded="false">
+          <span class="faqPro__qText">Do you accept volunteers?</span>
+          <span class="faqPro__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faqPro__a" hidden>
+          Yes — volunteers help us expand reach and capacity. Use the Get Involved form to connect with us.
+          <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+            <a class="btn" href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">Volunteer →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqPro__item reveal">
+        <button class="faqPro__q" type="button" aria-expanded="false">
+          <span class="faqPro__qText">Where are you located?</span>
+          <span class="faqPro__icon" aria-hidden="true"></span>
+        </button>
+        <div class="faqPro__a" hidden>
+          We’re based in Sacramento, CA. See the footer for physical and mailing addresses.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  const root = document.getElementById('faqPro');
+  if (!root) return;
+
+  function closeAll(except) {
+    root.querySelectorAll('.faqPro__item').forEach(item => {
+      if (item === except) return;
+      const btn = item.querySelector('.faqPro__q');
+      const ans = item.querySelector('.faqPro__a');
+      item.classList.remove('is-open');
+      btn?.setAttribute('aria-expanded', 'false');
+      if (ans) {
+        ans.style.maxHeight = '0px';
+        ans.hidden = true;
+      }
+    });
+  }
+
+  root.querySelectorAll('.faqPro__item').forEach(item => {
+    const btn = item.querySelector('.faqPro__q');
+    const ans = item.querySelector('.faqPro__a');
+    if (!btn || !ans) return;
+
+    // init collapsed
+    ans.hidden = true;
+    ans.style.maxHeight = '0px';
+
+    btn.addEventListener('click', () => {
+      const open = item.classList.contains('is-open');
+
+      if (!open) closeAll(item);
+
+      item.classList.toggle('is-open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+
+      if (!open) {
+        ans.hidden = false;
+        // allow layout, then animate
+        requestAnimationFrame(() => {
+          ans.style.maxHeight = ans.scrollHeight + 'px';
+        });
+      } else {
+        ans.style.maxHeight = '0px';
+        // hide after transition
+        setTimeout(() => { ans.hidden = true; }, 220);
+      }
+    });
+  });
+})();
+</script>
+{% endblock %}

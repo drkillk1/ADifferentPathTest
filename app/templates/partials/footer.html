@@ -1,0 +1,30 @@
+<!-- app/templates/partials/footer.html -->
+<footer class="footer" id="contact">
+  <div class="container grid">
+    <div class="card" style="grid-column: span 6;">
+      <h3>Connect With Us</h3>
+      <p>
+        Physical: 4625 44th Street Portable #37, Sacramento, CA 95820<br>
+        Mailing: 5960 S. Land Park Dr. Ste 144, Sacramento, CA 95822<br>
+        Office: 916-395-5023
+      </p>
+      <p style="color: var(--muted); margin-top:10px;">
+        You can also follow us on social or use our external forms for program requests.
+      </p>
+    </div>
+
+    <div class="card" style="grid-column: span 6;">
+      <h3>Send Us a Message</h3>
+      <form class="form" action="{{ url_for('site.contact') }}" method="post">
+        <input class="input" name="name" placeholder="Your name" />
+        <input class="input" name="email" placeholder="Your email" />
+        <textarea class="textarea" name="message" placeholder="How can we help?"></textarea>
+        <button class="btn btn--primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:18px; opacity:.8;">
+    © {{ 2035 }} A Different Path · Built with Flask + AWS
+  </div>
+</footer>
