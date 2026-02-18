@@ -15,9 +15,9 @@
   --muted:#5f7a95;               /* muted blue-gray */
 
   /* Brand */
-  --accent:#2f95ff;              /* brighter blue */
-  --accent2:#74c4ff;             /* lighter blue */
-  --accent3:#d7edff;             /* pale brand wash */
+  --accent:#5ec2c3;      /* main teal from logo */
+  --accent2:#7fd6d7;     /* lighter teal */
+  --accent3:#e6f8f8;     /* pale teal wash */
 
   /* Lines + depth */
   --border:rgba(47,149,255,.18);
