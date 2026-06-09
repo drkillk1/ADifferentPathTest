@@ -2,20 +2,20 @@
 {% extends "base.html" %}
 {% block title %}Home · A Different Path{% endblock %}
 {% block content %}
-<section class="hero">
+<section class="hero hero--footprints">
   <div class="container">
     <div class="hero__logo">
       <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
     </div>
     <h1 class="hero__title">A Different Path</h1>
     <p class="hero__subtitle">
-      A community-based nonprofit serving Greater Sacramento’s historically marginalized communities.
+      A community-based nonprofit serving historically marginalized communities throughout California.
       Rooted in Faith, Hope, and Change, we provide mental health education and support to trauma-impacted
       youth, adults, and families.
     </p>
 
     <div class="actions">
-      <a class="btn btn--primary" href="{{ url_for('site.how_we_support') }}">Get Started Today →</a>
+      <a class="btn btn--primary" href="{{ url_for('site.how_we_support') }}">Explore Pathways →</a>
       <a class="btn" href="{{ url_for('site.who_we_are') }}">Learn More About Us</a>
     </div>
   </div>
@@ -24,9 +24,8 @@
 <section class="section">
   <div class="container">
     <div class="hero__kicker" style="text-align:left;">Our Values</div>
-    <h2 style="margin:10px 0 10px;">What We Stand On</h2>
     <p style="margin:0 0 16px; color: var(--muted); max-width: 760px; line-height: 1.7;">
-      Tap a value to learn more. This carousel auto-advances.
+      Tap a value to learn more about the principles that guide our work.
     </p>
 
     <div class="carousel" id="valuesCarousel">
@@ -105,6 +104,11 @@
       <button class="carousel__nav carousel__nav--right" type="button" id="valuesNext" aria-label="Next slide">›</button>
 
       <div class="carousel__dots" id="valuesDots" aria-label="slider dots"></div>
+    </div>
+
+    <div class="actions valuesActions" style="justify-content:flex-start; margin-top:18px;">
+      <a class="btn" href="{{ url_for('site.faqs') }}">Read FAQs</a>
+      <a class="btn btn--primary" href="#contact">Contact Us →</a>
     </div>
   </div>
 </section>

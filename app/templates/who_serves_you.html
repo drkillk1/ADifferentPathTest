@@ -6,13 +6,9 @@
   <div class="container">
     <h1 class="hero__title">Who Serves You</h1>
     <p class="hero__subtitle">
-      We aim to provide support that’s consistent, trauma-informed, and respectful. Below are members of our clinical and
-      wellness team who help guide services and follow-through.
+      Meet the clinical and wellness practitioners who provide supportive, trauma-informed, and community-centered care.
     </p>
-    <div class="actions">
-      <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
-      <a class="btn" href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">Get Involved</a>
-    </div>
+
   </div>
 </section>
 
@@ -20,9 +16,9 @@
   <div class="container">
     <div class="headerRow">
       <div>
-<h2>Clinical & Wellness Practitioners</h2>
+<h2>Meet Our Clinical Wellness Practitioners</h2>
         <p class="headerRow__desc">
-          Our team includes licensed supervision and mental wellness practitioners supporting participant care.
+          Our team supports participant care through clinical guidance, wellness support, and compassionate follow-through.
         </p>
       </div>
     </div>
@@ -32,7 +28,7 @@
       <!-- Chanise -->
       <div class="person reveal">
         <div class="person__top">
-          <div class="avatar">CM</div>
+          <div class="avatar">MC</div>
           <div>
             <p class="person__name">Ms. Chanise</p>
             <p class="person__role">Clinical Supervisor</p>
@@ -41,11 +37,6 @@
         <p class="person__bio">
           Provides clinical supervision and guidance to support ethical, trauma-informed care and strong follow-through.
         </p>
-        <div class="person__tags">
-          <span class="tag">LMFT 98482</span>
-          <span class="tag">Clinical Oversight</span>
-          <span class="tag">Trauma-informed</span>
-        </div>
       </div>
 
       <!-- Ahisha -->
@@ -60,11 +51,6 @@
         <p class="person__bio">
           Supports mental wellness pathways with care coordination, participant-centered support, and practical next steps.
         </p>
-        <div class="person__tags">
-          <span class="tag">AMFT 114427</span>
-          <span class="tag">Wellness Support</span>
-          <span class="tag">Care Coordination</span>
-        </div>
       </div>
 
       <!-- LaRita -->
@@ -79,11 +65,6 @@
         <p class="person__bio">
           Provides supportive wellness services and helps participants navigate resources and consistent follow-up.
         </p>
-        <div class="person__tags">
-          <span class="tag">APCC 6562</span>
-          <span class="tag">Supportive Services</span>
-          <span class="tag">Resource Navigation</span>
-        </div>
       </div>
 
       <!-- Priscila -->
@@ -98,11 +79,6 @@
         <p class="person__bio">
           Helps support participants through wellness check-ins, care guidance, and progress-focused support planning.
         </p>
-        <div class="person__tags">
-          <span class="tag">AMFT 153032</span>
-          <span class="tag">Participant Support</span>
-          <span class="tag">Wellness Planning</span>
-        </div>
       </div>
 
       <!-- LaTiana -->
@@ -117,17 +93,12 @@
         <p class="person__bio">
           Supports participant wellness with consistent communication, community-informed care, and resource connection.
         </p>
-        <div class="person__tags">
-          <span class="tag">AMFT 137570</span>
-          <span class="tag">Wellness Support</span>
-          <span class="tag">Community Care</span>
-        </div>
       </div>
 
       <!-- Christopher -->
       <div class="person reveal">
         <div class="person__top">
-          <div class="avatar">CM</div>
+          <div class="avatar">MC</div>
           <div>
             <p class="person__name">Mr. Christopher</p>
             <p class="person__role">Mental Wellness Practitioner</p>
@@ -136,23 +107,30 @@
         <p class="person__bio">
           Provides participant-centered wellness support and helps guide next steps with clarity, respect, and consistency.
         </p>
-        <div class="person__tags">
-          <span class="tag">Mental Wellness</span>
-          <span class="tag">Support</span>
-          <span class="tag">Follow-through</span>
-        </div>
       </div>
 
     </div>
 
-    <div class="callout reveal" style="margin-top:18px;">
-      <div class="callout__title">Need help choosing the right support?</div>
-      <p class="callout__desc">
-        Start with the Get Started page to select a request form. If you’re unsure, contact us and we’ll guide you.
-      </p>
-      <div class="actions" style="justify-content:flex-start; margin-top:12px;">
-        <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
-</div>
+    <div class="calloutGrid">
+      <div class="callout reveal" style="margin-top:18px;">
+        <div class="callout__title">Need Help Choosing The Right Support?</div>
+        <p class="callout__desc">
+          Contact our office and we’ll help guide you toward the support pathway that fits your needs.
+        </p>
+        <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+          <a class="btn" href="#contact">Contact Our Office →</a>
+        </div>
+      </div>
+
+      <div class="callout reveal" style="margin-top:18px;">
+        <div class="callout__title">Know Your Preference?</div>
+        <p class="callout__desc">
+          Go to Get Started to select your Wellness Practitioner or request the service that feels right for you.
+        </p>
+        <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+          <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

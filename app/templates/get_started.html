@@ -6,8 +6,14 @@
   <div class="container">
     <h1 class="hero__title">Get Started</h1>
     <p class="hero__subtitle">
-      We provide mental health education, counseling request pathways, youth support options, and community-based programs. Choose a service below and open the request form.
+      Support pathways designed for healing, growth, accountability, and community connection.
+      Explore available programs, learn how the process works, and choose the request form that fits your needs.
     </p>
+    <div class="actions heroSupportActions">
+      <a class="btn btn--primary" href="#pathways">Explore Pathways →</a>
+      <!-- <a class="btn" href="{{ url_for('site.get_started') }}">Get Started</a> -->
+      <a class="btn" href="#how">How It Works</a>
+    </div>
   </div>
 </section>
 
@@ -15,7 +21,7 @@
   <div class="container">
     <div class="headerRow">
       <div>
-        <h2>Simple steps. Clear follow-up.</h2>
+        <h2>How It Works</h2>
         <p class="headerRow__desc">
           Submit a request, we respond, and we help you navigate next steps.
         </p>
@@ -42,7 +48,7 @@
       <div class="timeline__row">
         <div class="timeline__num">3</div>
         <div>
-          <p class="timeline__title">Support pathway begins</p>
+          <p class="timeline__title">Your support pathway begins</p>
           <p class="timeline__desc">We connect you to the right program option, resources, or referrals.</p>
         </div>
       </div>
@@ -51,14 +57,22 @@
 </section>
 
 
-<section class="section">
+<section class="section" id="pathways">
+  <div class="container">
+    <div class="sectionHeader">
+      <div class="sectionHeader__left">
+        <h2>Find A Path For You</h2>
+        <p class="sectionHeader__desc">Choose the pathway that best matches your needs. Each card links directly to the correct request form.</p>
+      </div>
+    </div>
+  </div>
   <div class="container getStartedGrid">
 
     <div class="serviceCard reveal" data-analytics="footprints_to_healing">
       <h3>Footprints to Healing</h3>
-      <p class="serviceMeta">Counseling for ages 12–18</p>
+      
       <p class="serviceDesc">
-        Youth counseling support designed for trauma recovery, stress management, and life transitions.
+        A youth-centered healing pathway for ages 12–18 that supports emotional wellness, coping tools, and growth after difficult experiences.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -67,9 +81,9 @@
     </div>
 
     <div class="serviceCard reveal" data-analytics="counseling_request">
-      <h3>Counseling Request</h3>
+      <h3>Adapting to A New Normal</h3>
       <p class="serviceDesc">
-        Request counseling services for individuals or families seeking mental health support.
+        A support pathway for individuals and families navigating transition, stress, trauma, grief, or major life changes.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -78,10 +92,9 @@
     </div>
 
     <div class="serviceCard reveal" data-analytics="life_coaching_adults">
-      <h3>Life Coaching Request</h3>
-      <p class="serviceMeta">Adults</p>
+      <h3>Life Coaching</h3>
       <p class="serviceDesc">
-        Coaching focused on goal-setting, accountability, and building a healthier direction forward.
+        Goal-centered support for adults who want clarity, accountability, and practical steps toward a healthier direction forward.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -90,10 +103,9 @@
     </div>
 
     <div class="serviceCard reveal" data-analytics="alternative_sentencing">
-      <h3>Sacramento Sheriff’s</h3>
-      <p class="serviceMeta">Alternative Sentencing Program Request</p>
+      <h3>Community Service</h3>
       <p class="serviceDesc">
-        Court-referred services supporting accountability, rehabilitation, and community reintegration.
+        A community-centered pathway that supports accountability, growth, and connection through meaningful service opportunities.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -102,9 +114,9 @@
     </div>
 
     <div class="serviceCard reveal" data-analytics="community_programs_inquiry">
-      <h3>Community Programs Inquiry</h3>
+      <h3>Community Programs</h3>
       <p class="serviceDesc">
-        Learn about workshops, groups, and community-based initiatives available in your area.
+        Workshops, groups, and community-based initiatives that support wellness, education, and connection.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -113,9 +125,9 @@
     </div>
 
     <div class="serviceCard reveal" data-analytics="professional_development">
-      <h3>Request Professional Development</h3>
+      <h3>Professional Development</h3>
       <p class="serviceDesc">
-        Training, workshops, and speaking engagements for organizations and professionals.
+        Training, workshops, and speaking opportunities for organizations, schools, teams, and community professionals.
       </p>
       <a class="btn btn--primary track-link"
          data-event="get_started_click"
@@ -126,13 +138,13 @@
     <div class="serviceCard serviceCard--highlight reveal" data-analytics="get_involved">
       <h3>Get Involved</h3>
       <p class="serviceDesc">
-        Volunteer, partner, or support our mission in the community.
+        Join the cause, partner with us, or help fund a program that supports community healing.
       </p>
       <a class="btn track-link"
          data-event="get_started_click"
          data-label="get_involved"
          href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">
-         Volunteer →
+         Join The Cause →
       </a>
     </div>
 

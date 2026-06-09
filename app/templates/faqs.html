@@ -3,13 +3,11 @@
 {% block content %}
 <section class="hero" style="padding-top:64px;">
   <div class="container">
-    <h1 class="hero__title">FAQs</h1>
+    <h1 class="hero__title">Frequently Asked Questions</h1>
     <p class="hero__subtitle">
       If you don’t see what you need here, message us at the bottom of the page and we’ll help you find the right support.
     </p>
-    <div class="actions">
-      <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Get Started →</a>
-</div>
+
   </div>
 </section>
 
@@ -17,7 +15,7 @@
   <div class="container">
     <div class="sectionHeader">
       <div class="sectionHeader__left">
-<h2>What people ask most</h2>
+<h2>Questions & Answers</h2>
         <p class="sectionHeader__desc">Click a question to expand. Works great on mobile.</p>
       </div>
     </div>
@@ -30,8 +28,7 @@
           <span class="faqPro__icon" aria-hidden="true"></span>
         </button>
         <div class="faqPro__a" hidden>
-          We’re a community-based nonprofit serving Greater Sacramento’s historically marginalized communities through
-          mental health education and support pathways.
+          A Different Path is a community-based nonprofit serving historically marginalized communities throughout California through mental health education, wellness support, and community-based programs.
         </div>
       </div>
 
@@ -41,34 +38,36 @@
           <span class="faqPro__icon" aria-hidden="true"></span>
         </button>
         <div class="faqPro__a" hidden>
-          Visit the Get Started page and choose the service you’re interested in. Each option links to a request form.
-          <div class="actions" style="justify-content:flex-start; margin-top:12px;">
-            <a class="btn btn--primary" href="{{ url_for('site.get_started') }}">Go to Get Started →</a>
-          </div>
+          Choose the support pathway that feels closest to your need. If you are unsure, contact our office and we will help guide you.
         </div>
       </div>
 
       <div class="faqPro__item reveal">
         <button class="faqPro__q" type="button" aria-expanded="false">
-          <span class="faqPro__qText">Do you accept volunteers?</span>
+          <span class="faqPro__qText">How can I get involved?</span>
           <span class="faqPro__icon" aria-hidden="true"></span>
         </button>
         <div class="faqPro__a" hidden>
-          Yes — volunteers help us expand reach and capacity. Use the Get Involved form to connect with us.
-          <div class="actions" style="justify-content:flex-start; margin-top:12px;">
-            <a class="btn" href="{{ FORM_GET_INVOLVED_URL }}" target="_blank" rel="noopener">Volunteer →</a>
-          </div>
+          You can join the cause, support a program, explore board involvement, or connect about partnership opportunities through our Get Involved form.
         </div>
       </div>
 
       <div class="faqPro__item reveal">
         <button class="faqPro__q" type="button" aria-expanded="false">
-          <span class="faqPro__qText">Where are you located?</span>
+          <span class="faqPro__qText">Where are you located and what are your office hours?</span>
           <span class="faqPro__icon" aria-hidden="true"></span>
         </button>
         <div class="faqPro__a" hidden>
-          We’re based in Sacramento, CA. See the footer for physical and mailing addresses.
+          We are located in Sacramento, California. Office hours are available by appointment and can be confirmed with our office before your visit.
         </div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:18px;">
+      <div class="callout__title">Still have questions?</div>
+      <p class="callout__desc">Connect with us and our team will help point you in the right direction.</p>
+      <div class="actions" style="justify-content:flex-start; margin-top:12px;">
+        <a class="btn btn--primary" href="#contact">Contact Us →</a>
       </div>
     </div>
   </div>
